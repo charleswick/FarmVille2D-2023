@@ -5,7 +5,7 @@ public class Plot {
 
     public Plot(){
         //plantName = "basil";
-        needsWater = true;
+        needsWater = false;
         numberOfplants = (int)(Math.random()*100)+10;
         int num = (int)(Math.random()*5);
         if(num ==0){
@@ -22,6 +22,7 @@ public class Plot {
         }
         if (num ==4){
             plantName = "empty";
+            numberOfplants = 0;
         }
 
     }
