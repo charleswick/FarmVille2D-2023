@@ -3,6 +3,8 @@ public class Plot {
     public int numberOfplants;
     public boolean needsWater;
 
+    public int plantCount;
+
     public Plot(){
         //plantName = "basil";
         needsWater = false;
@@ -28,6 +30,12 @@ public class Plot {
     }
     public void printPlot(){
         System.out.println("There is a "+plantName+" plant in the plot that has "+numberOfplants + " plants and is "+needsWater +" that it needs water.");
+    }
+
+    public void totalPlants(){
+        plantCount = plantCount+numberOfplants;
+        System.out.println(plantCount);
+
     }
 
 }

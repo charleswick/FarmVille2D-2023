@@ -1,28 +1,34 @@
 public class MyFarm {
+
     public static void main(String[] args) {
         MyFarm charlie = new MyFarm();
 
 
 
     }
+    public Plot[][] grid;
     public MyFarm(){
         System.out.println("Hello from my farm!");
         Plot Ryan = new Plot();
         //Ryan.printPlot();
 
-            Plot [][] grid = new Plot[10][1];
-        for (int i = 0; i < grid.length; i++) {
+            grid = new Plot[10][1];
+        for (int row = 0; row < grid.length; row++) {
 
-            for (int p = 0; p < grid[i].length; p++) {
+            for (int col = 0; col < grid[row].length; col++) {
 
-                grid[i][p]=new Plot();
+                grid[row][col]=new Plot();
 
-                grid[i][p].printPlot();
+                grid[row][col].printPlot();
+                grid[row][col].totalPlants();
+
             }
+
+
         }
 
 
-
     }
+
 
 }
