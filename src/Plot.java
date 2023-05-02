@@ -1,6 +1,7 @@
 public class Plot {
     public String plantName;
     public int numberOfplants;
+    public int carrotCount;
     public boolean needsWater;
 
 
@@ -17,6 +18,8 @@ public class Plot {
         }
         if (num ==2){
             plantName = "carrots";
+
+
         }
         if (num ==3){
             plantName = "tomato";
