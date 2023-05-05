@@ -31,7 +31,8 @@ public class MyFarm {
         //totalCarrots();
         //averageNumberOfPlants();
         //numberOfEmptyPlots();
-        everyOtherNeedsWater();
+        //everyOtherNeedsWater();
+        plantWithMaxNumber();
 
     }
 
@@ -122,6 +123,22 @@ public class MyFarm {
 
         //multiply waternum by -1 each time??
     }
+    public void plantWithMaxNumber() {
+        int maxPlants = 0;
+        String maxPlantType = "start";
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                if (grid[c][v].numberOfplants > maxPlants){
+                    maxPlants = grid[c][v].numberOfplants;
+                    maxPlantType=grid[c][v].plantName;
+
+                }
+            }
+        System.out.println("The max plant count is "+maxPlants +" "+maxPlantType+" plant");
+
+        // which plant type has the most total plants?
+    }
+
 
 
 
