@@ -12,7 +12,7 @@ public class MyFarm {
         Plot Ryan = new Plot();
         //Ryan.printPlot();
 
-            grid = new Plot[10][10];
+            grid = new Plot[3][3];
         for (int row = 0; row < grid.length; row++) {
 
             for (int col = 0; col < grid[row].length; col++) {
@@ -29,7 +29,8 @@ public class MyFarm {
           //totalPlants();
         //printPlantNames();
         //totalCarrots();
-        averageNumberOfPlants();
+        //averageNumberOfPlants();
+        //numberOfEmptyPlots();
 
     }
 
@@ -86,6 +87,28 @@ public class MyFarm {
 
 
     }
+    public void numberOfEmptyPlots() {
+        int emptyPlots = 0;
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                if (grid[c][v].plantName.equals("empty")){
+                    emptyPlots=emptyPlots+1;
+                }
+            }
+        System.out.println("There are "+emptyPlots +" empty plots in the farm");
+
+
+    }
+    public void everyOtherNeedsWater(){
+        int waterNum = 1;
+        // change the value of needsWater to be true for every other plot
+        // print the value or needs water for all plots row by row
+
+        //multiply waternum by -1 each time??
+    }
+
+
+
 
 
 }
