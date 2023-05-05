@@ -31,6 +31,7 @@ public class MyFarm {
         //totalCarrots();
         //averageNumberOfPlants();
         //numberOfEmptyPlots();
+        everyOtherNeedsWater();
 
     }
 
@@ -101,6 +102,21 @@ public class MyFarm {
     }
     public void everyOtherNeedsWater(){
         int waterNum = 1;
+        for(int t = 0; t< grid.length; t++)
+            for(int y = 0; y<grid[t].length; y++){
+                waterNum=waterNum*-1;
+                if (waterNum==1){
+                    grid[t][y].needsWater=true;
+
+                }
+                if (waterNum==-1){
+                    grid[t][y].needsWater=false;
+                }
+                grid[t][y].printPlot();
+            }
+
+
+
         // change the value of needsWater to be true for every other plot
         // print the value or needs water for all plots row by row
 
