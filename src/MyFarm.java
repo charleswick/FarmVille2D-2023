@@ -31,8 +31,11 @@ public class MyFarm {
         //totalCarrots();
         //averageNumberOfPlants();
         //numberOfEmptyPlots();
-        //everyOtherNeedsWater();
-        plantWithMaxNumber();
+        everyOtherNeedsWater();
+        //plantWithMaxNumber();
+        //plantWithMinNumber();
+        //greaterThan50();
+        plantWithMaxNumberNeedsWater();
 
     }
 
@@ -138,10 +141,62 @@ public class MyFarm {
 
         // which plant type has the most total plants?
     }
+    public void plantWithMinNumber() {
+        // which plant type has the least total plants (not counting empty plots)?
+        //do opposite of what I did with max number
+        //start off with if statement to check if the plot plant type is not empty
+        int minPlant = 500;
+        String minPlantType = "start";
+
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                if (grid[c][v].numberOfplants < minPlant && !grid[c][v].plantName.equals("empty")){
+                    minPlant = grid[c][v].numberOfplants;
+                    minPlantType=grid[c][v].plantName;
+
+                }
+            }
+        System.out.println("The least amount of plants is "+minPlant+" in a "+minPlantType +" plot");
+    }
+
+    public void greaterThan50() {
+        // how many plots have more than 50 plants in the plot?
+        int plotsOver50 = 0;
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                if (grid[c][v].numberOfplants>50){
+                    plotsOver50=plotsOver50+1;
+
+
+                }
+            }
+        System.out.println("There are "+plotsOver50 +" plots with over 50 plants");
+
+
+    }
+    public void plantWithMaxNumberNeedsWater() {
+        // which plant type has the most total plants (not counting empty plots) that needs water?
+        int maxPlants = 0;
+        String maxPlantType = "start";
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                if ((grid[c][v].numberOfplants > maxPlants && grid[c][v].needsWater) == true){
+                    maxPlants = grid[c][v].numberOfplants;
+                    maxPlantType=grid[c][v].plantName;
+
+                }
+            }
+        System.out.println("The plant count is "+maxPlants +" "+maxPlantType+" plant and it needs water");
+
+
+    }
 
 
 
 
 
 
-}
+
+
+
+    }
