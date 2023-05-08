@@ -31,7 +31,7 @@ public class MyFarm {
         //totalCarrots();
         //averageNumberOfPlants();
         //numberOfEmptyPlots();
-        everyOtherNeedsWater();
+        //everyOtherNeedsWater();
         //plantWithMaxNumber();
         //plantWithMinNumber();
         //greaterThan50();
@@ -127,7 +127,7 @@ public class MyFarm {
         //multiply waternum by -1 each time??
     }
     public void plantWithMaxNumber() {
-        int maxPlants = 0;
+        int maxPlants = grid[0][0].numberOfplants;
         String maxPlantType = "start";
         for(int c = 0; c< grid.length; c++)
             for(int v = 0; v<grid[c].length; v++){
@@ -139,8 +139,50 @@ public class MyFarm {
             }
         System.out.println("The max plant count is "+maxPlants +" "+maxPlantType+" plant");
 
+
+
         // which plant type has the most total plants?
     }
+
+    public void plantTypeWithMaxNumber() {
+        int numCorn = 0;
+        int numTomato = 0;
+        int numCarrot = 0;
+        int numSunflower = 0;
+        for(int c = 0; c< grid.length; c++)
+            for(int v = 0; v<grid[c].length; v++){
+                switch (grid[c][v].plantName){
+                    case "corn":
+                        numCorn=numCorn+grid[c][v].numberOfplants;
+                        break;
+                    case "sunflower":
+                        numSunflower+=grid[c][v].numberOfplants;
+                        break;
+                    case "tomato":
+                        numTomato+=grid[c][v].numberOfplants;
+                        break;
+                    default:
+                        numCarrot+=grid[c][v].numberOfplants;
+                        break;
+
+                }
+
+            }
+       if(numSunflower>numCarrot && numSunflower > numCorn && numSunflower > numTomato){
+           System.out.println("Sunflower has the most plants with "+numSunflower+" plants");
+       }
+        if(numSunflower>numCarrot && numSunflower > numCorn && numSunflower > numTomato){
+            System.out.println("Carrot has the most plants with "+numCarrot+" plants");
+        }
+        if(numSunflower>numCarrot && numSunflower > numCorn && numSunflower > numTomato){
+            System.out.println("Tomato has the most plants with "+numSunflower+" plants");
+        }
+        if(numSunflower>numCarrot && numSunflower > numCorn && numSunflower > numTomato){
+            System.out.println("Corn has the most plants with "+numCorn+" plants");
+        }
+
+    }
+
     public void plantWithMinNumber() {
         // which plant type has the least total plants (not counting empty plots)?
         //do opposite of what I did with max number
