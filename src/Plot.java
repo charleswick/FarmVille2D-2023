@@ -10,6 +10,9 @@ public class Plot {
         //plantName = "basil";
 
 
+
+
+
         needsWater = false;
 
 

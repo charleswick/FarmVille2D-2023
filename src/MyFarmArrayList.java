@@ -11,16 +11,42 @@ public class MyFarmArrayList {
 
     public MyFarmArrayList() {
         System.out.println("My farm using array lists");
-        for (int x = 0; x < 10; x++) {
-            for (int p = 0; p < 10; p++) {
+
+            for (Plot a: row) {
                 System.out.println(row.size());
                 row.add(new Plot());
-                row.get(p).printPlot();
+                a.printPlot();
             }
-            row.remove(3);
-        }
 
+
+
+            for (int p = 0;p<10;p++){
+                //System.out.println(row.size());
+                row.add(new Plot());
+                row.get(p).printPlot();
+
+            }
+//            row.remove(3);
+//            System.out.println(row.size());
+
+
+
+//
+
+        totalPlants();
 
     }
+    public void totalPlants() {
+        // how many total plants are there in the row?
+        int totalPlantCount = 0;
+        for (Plot a:row){
+            totalPlantCount+=a.numberOfplants;
+
+        }
+        System.out.println(totalPlantCount);
+
+    }
+
+
 
 }
