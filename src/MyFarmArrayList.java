@@ -17,6 +17,10 @@ public class MyFarmArrayList {
                 row.add(new Plot());
                 row.get(p).printPlot();
             }
+            row.remove(3);
         }
+
+
     }
+
 }
