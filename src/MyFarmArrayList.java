@@ -33,7 +33,10 @@ public class MyFarmArrayList {
 
 //
 
-        totalPlants();
+        //totalPlants();
+        //printPlantNames();
+        //printRowInfo();
+        addLettuce();
 
     }
     public void totalPlants() {
@@ -46,6 +49,29 @@ public class MyFarmArrayList {
         System.out.println(totalPlantCount);
 
     }
+    public void printPlantNames() {
+        // print the name of each plant in the row and its index
+        for (Plot a:row){
+          System.out.println("Plot at "+a+" has "+ a.numberOfplants+" plants");
+        }
+
+    }
+    public void printRowInfo() {
+        // use the printPlotInfo() method in Plot.java to print all information for each plot in the row
+        for (Plot a:row){
+            System.out.println("Plot at "+a+" has "+ a.numberOfplants+" "+a.plantName+ " plants and it is "+a.needsWater+" that it needs water");
+        }
+    }
+    public void addLettuce() {
+        // add a lettuce plot to the end of the row with 42 plants that need water
+        // call printPlantNames() method before and after your addition to make sure it worked
+
+    }
+
+
+
+
+
 
 
 
