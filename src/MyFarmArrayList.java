@@ -20,7 +20,7 @@ public class MyFarmArrayList {
 
 
 
-            for (int p = 0;p<10;p++){
+            for (int p = 0;p<11;p++){
                 //System.out.println(row.size());
                 row.add(new Plot());
                 row.get(p).printPlot();
@@ -34,9 +34,11 @@ public class MyFarmArrayList {
 //
 
         //totalPlants();
-        //printPlantNames();
+        printPlantNames();
         //printRowInfo();
-        addLettuce();
+        addSunflower();
+        addCorn();
+        printPlantNames();
 
     }
     public void totalPlants() {
@@ -51,20 +53,39 @@ public class MyFarmArrayList {
     }
     public void printPlantNames() {
         // print the name of each plant in the row and its index
-        for (Plot a:row){
-          System.out.println("Plot at "+a+" has "+ a.numberOfplants+" plants");
+        for (int k = 0; k<row.size();k++){
+          System.out.println("Plot at "+k+" has "+ row.get(k).numberOfplants+" "+row.get(k).plantName+ " plants \t");
         }
 
     }
     public void printRowInfo() {
         // use the printPlotInfo() method in Plot.java to print all information for each plot in the row
         for (Plot a:row){
-            System.out.println("Plot at "+a+" has "+ a.numberOfplants+" "+a.plantName+ " plants and it is "+a.needsWater+" that it needs water");
+            System.out.print("Plot at "+a+" has "+ a.numberOfplants+" "+a.plantName+ " plants and it is "+a.needsWater+" that it needs water\t");
         }
     }
-    public void addLettuce() {
+    public void addSunflower() {
         // add a lettuce plot to the end of the row with 42 plants that need water
         // call printPlantNames() method before and after your addition to make sure it worked
+        Plot sunflower = new Plot();
+        sunflower.needsWater = true;
+        sunflower.plantName="sunflower";
+        sunflower.numberOfplants=42;
+
+        row.add(sunflower);
+
+
+    }
+    public void addCorn() {
+        // add a lettuce plot to the end of the row with 42 plants that need water
+        // call printPlantNames() method before and after your addition to make sure it worked
+        Plot corn = new Plot();
+        corn.needsWater = false;
+        corn.plantName="corn";
+        corn.numberOfplants=70;
+
+        row.add(3,corn);
+
 
     }
 
