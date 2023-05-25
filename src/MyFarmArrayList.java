@@ -40,10 +40,14 @@ public class MyFarmArrayList {
         addCorn();
         printPlantNames();
         //tomatoLocations();
-        totalCarrots();
-        averageNumberOfPlants();
-        numberOfCarrotPlots();
-        numberOfEmptyPlots();
+        //totalCarrots();
+        //averageNumberOfPlants();
+       // numberOfCarrotPlots();
+       // numberOfEmptyPlots();
+        //printRowInfo();
+        everyOtherNeedsWater();
+       // printRowInfo();
+        plantWithMaxNumber();
 
 
     }
@@ -165,7 +169,44 @@ public class MyFarmArrayList {
         }
         System.out.println("There are "+ numEmpty+" empty plots");
     }
+
+
+
+    public void everyOtherNeedsWater(){
+        // change the value of needsWater to be true for every other plot
+        int everyOtherCounter = 1;
+
+        for(Plot b:row){
+            everyOtherCounter=everyOtherCounter*-1;
+            if (everyOtherCounter==1){
+                b.needsWater=true;
+
+
+            }
+            else {
+                b.needsWater=false;
+            }
+
+        }
+
     }
+    public void plantWithMaxNumber() {
+        // which plant type has the most total plants?
+        int mostPlant = 0;
+
+        for(Plot b:row){
+            if (b.numberOfplants>mostPlant){
+                mostPlant= b.numberOfplants;
+
+            }
+
+        }
+        System.out.println(mostPlant);
+    }
+
+
+
+}
 
 
 
