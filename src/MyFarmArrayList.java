@@ -44,10 +44,15 @@ public class MyFarmArrayList {
         //averageNumberOfPlants();
        // numberOfCarrotPlots();
        // numberOfEmptyPlots();
-        //printRowInfo();
-        everyOtherNeedsWater();
        // printRowInfo();
-        plantWithMaxNumber();
+        everyOtherNeedsWater();
+        //printRowInfo();
+       // plantWithMaxNumber();
+        //printRowInfo();
+        removeAllEmpty();
+        //System.out.println("-------------------------------");
+        //printRowInfo();
+
 
 
     }
@@ -71,7 +76,8 @@ public class MyFarmArrayList {
     public void printRowInfo() {
         // use the printPlotInfo() method in Plot.java to print all information for each plot in the row
         for (Plot a:row){
-            System.out.print("Plot at "+a+" has "+ a.numberOfplants+" "+a.plantName+ " plants and it is "+a.needsWater+" that it needs water\t");
+           a.printPlot();
+            // System.out.print("Plot at "+a+" has "+ a.numberOfplants+" "+a.plantName+ " plants and it is "+a.needsWater+" that it needs water\t");
         }
     }
     public void addSunflower() {
@@ -203,6 +209,16 @@ public class MyFarmArrayList {
         }
         System.out.println(mostPlant);
     }
+    public void removeAllEmpty() {
+        // remove all empty plots
+        // call printPlantNames() method before and after your removal to make sure it worked
+        for (int c=0; c<row.size();c++){
+            if (row.get(c).plantName.equals("empty")){
+              row.remove(c);
+            }
+        }
+    }
+
 
 
 
